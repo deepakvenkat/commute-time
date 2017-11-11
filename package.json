@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "classnames": "^2.2.5",
     "moment": "^2.19.1",
     "react": "^16.1.0",
     "react-bootstrap": "^0.31.5",

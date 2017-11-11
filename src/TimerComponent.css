@@ -1,0 +1,13 @@
+.timer-button-wrapper {
+  padding-bottom: 20px;
+}
+
+.timer-button {
+  padding: 50px;
+  font-size: 32px;
+}
+
+.timer-duration {
+  padding-tip: 20px;
+  font-size: 28px;
+}
