@@ -8,6 +8,8 @@ import './TimerComponent.css';
 class TimerComponent extends Component {
   static propTypes = {
     endTimerHandler: PropTypes.func,
+    className: PropTypes.string,
+    show: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -55,6 +57,7 @@ class TimerComponent extends Component {
       props: {
         endTimerHandler,
         className,
+        show,
       },
     } = this;
 
@@ -70,9 +73,15 @@ class TimerComponent extends Component {
       });
     };
 
+    const wrapperClass = classnames(
+      "timer-wrapper",
+      className,
+      show ? '' : 'hide'
+    );
+
     return (
       <div
-        className={classnames("timer-wrapper", className)}
+        className={wrapperClass}
       >
         <div
           className="timer-button-wrapper"

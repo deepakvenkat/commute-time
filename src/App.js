@@ -3,9 +3,19 @@ import './App.css';
 import TimerComponent from './TimerComponent.jsx';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showTimer: true,
+      showRecordForm: false,
+    };
+  }
   render() {
     const endTimerHandler = (timerValue) => {
       console.log(timerValue);
+      this.setState({
+        showTimer: false,
+      });
     }
 
     return (
@@ -16,6 +26,7 @@ class App extends Component {
         <TimerComponent
           endTimerHandler={endTimerHandler}
           className="timer"
+          show={this.state.showTimer}
         />
       </div>
     );
