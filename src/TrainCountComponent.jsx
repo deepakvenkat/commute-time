@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {FormControl, ControlLabel, InputGroup, Glyphicon} from 'react-bootstrap';
+import {FormControl, ControlLabel, InputGroup, Glyphicon, Alert} from 'react-bootstrap';
 
 import './TrainCountComponent.css';
 
@@ -44,6 +44,12 @@ class TrainCountComponent extends Component {
             <Glyphicon glyph='plus-sign'/>
           </InputGroup.Addon>
         </InputGroup>
+        <Alert
+          bsStyle="warning"
+          className={trainCount > 5 ? "" : "hide"}
+        >
+          <strong>Whoa!</strong> Really? {trainCount} trains?
+        </Alert>
       </div>
     );
   }
