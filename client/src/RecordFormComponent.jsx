@@ -62,11 +62,28 @@ class RecordFormComponent extends Component {
 
   recordCommute(e) {
     e.preventDefault();
-    const { trainList } = this.state;
-    console.log(trainList);
-    console.log(this.startingPoint.value);
-    console.log(this.endingPoint.value);
-    console.log(this.outlier.checked);
+    const { trainList, timerValue } = this.state;
+    const { submitHandler } = this.props;
+    const commuteData = {
+      startingPoint: this.startingPoint.value,
+      endingPoint: this.endingPoint.value,
+      userName: this.userName.value,
+      outlier: this.outlier.checked,
+      trainList,
+      timerValue,
+    };
+    const headers = {
+      'Content-Type': 'application/json',
+    };
+
+    fetch('http://localhost:3001/commute', {
+      method: 'post',
+      headers,
+      body: JSON.stringify(commuteData),
+    })
+    .then((response) => {
+      submitHandler();
+    });
   }
 
   render() {
@@ -97,6 +114,11 @@ class RecordFormComponent extends Component {
             readOnly
             disabled
             className='record-form-timer'
+          />
+          <FormControl
+            type='text'
+            placeholder='UserName'
+            inputRef={el => this.userName = el}
           />
           <FormControl
             type='text'

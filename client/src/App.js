@@ -15,15 +15,22 @@ class App extends Component {
       },
     };
   }
+
   render() {
     const endTimerHandler = (timerValue) => {
-      console.log(timerValue);
       this.setState({
         showTimer: false,
         showRecordForm: true,
         timerValue: timerValue
       });
     }
+
+    const handleRecordCommute = () => {
+      this.setState({
+        showTimer: true,
+        showRecordForm: false,
+      });
+    };
 
     return (
       <div className="App">
@@ -38,6 +45,7 @@ class App extends Component {
         <RecordFormComponent
           show={this.state.showRecordForm}
           timerValue={this.state.timerValue}
+          submitHandler={handleRecordCommute}
         />
       </div>
     );

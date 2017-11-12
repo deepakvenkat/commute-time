@@ -74,6 +74,13 @@ class TimerComponent extends Component {
         startTime: this.state.startTime,
         endTime: Date.now(),
       });
+      this.setState({
+        startTime: 0,
+        endTime: 0,
+        timerOn: false,
+        displayTime: '',
+        timerInterval: ''
+      });
     };
 
     const wrapperClass = classnames(
