@@ -1,0 +1,19 @@
+{
+  "name": "commute-time",
+  "version": "0.0.1",
+  "description": "Node react app to record commute times",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deepakvenkat/commute-time.git"
+  },
+  "author": "deepakvenkat",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/deepakvenkat/commute-time/issues"
+  },
+  "homepage": "https://github.com/deepakvenkat/commute-time#readme"
+}
