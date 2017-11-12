@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import TimerComponent from './TimerComponent.jsx';
+import RecordFormComponent from './RecordFormComponent.jsx';
 
 class App extends Component {
   constructor(props) {
@@ -8,6 +9,10 @@ class App extends Component {
     this.state = {
       showTimer: true,
       showRecordForm: false,
+      timerValue: {
+        startTime: 0,
+        endTime: 0,
+      },
     };
   }
   render() {
@@ -15,6 +20,8 @@ class App extends Component {
       console.log(timerValue);
       this.setState({
         showTimer: false,
+        showRecordForm: true,
+        timerValue: timerValue
       });
     }
 
@@ -27,6 +34,10 @@ class App extends Component {
           endTimerHandler={endTimerHandler}
           className="timer"
           show={this.state.showTimer}
+        />
+        <RecordFormComponent
+          show={this.state.showRecordForm}
+          timerValue={this.state.timerValue}
         />
       </div>
     );

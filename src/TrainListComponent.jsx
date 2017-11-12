@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {FormControl} from 'react-bootstrap';
 
+import './TrainListComponent.css';
 class TrainListComponent extends Component {
   static propTypes = {
     trainCount: PropTypes.number,
@@ -31,9 +32,11 @@ class TrainListComponent extends Component {
       trainListInputs.push(
         <FormControl
           type="text"
+          className="train-list-item"
           //eslint-disable-next-line
           onChange={(e) => this.handleChange(index, e)}
           value={value}
+          maxLength={1}
         />
       )
     };
