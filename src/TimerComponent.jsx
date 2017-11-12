@@ -59,6 +59,9 @@ class TimerComponent extends Component {
         className,
         show,
       },
+      state: {
+        timerOn,
+      },
     } = this;
 
     const stopTimer = (e) => {
@@ -91,7 +94,9 @@ class TimerComponent extends Component {
             block
             bsStyle="success"
             onClick={this.handleStart}
-            className="timer-button">
+            className="timer-button"
+            disabled={timerOn}
+          >
               Start
           </Button>
         </div>
@@ -103,7 +108,9 @@ class TimerComponent extends Component {
             block
             bsStyle="danger"
             onClick={stopTimer}
-            className="timer-button">
+            className="timer-button"
+            disabled={!timerOn}
+          >
               Stop
           </Button>
         </div>
